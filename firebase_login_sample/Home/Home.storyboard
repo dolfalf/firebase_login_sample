@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XLv-GR-EHC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="81k-r3-3qA">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="XLv-GR-EHC" customClass="HomeViewController" customModule="firebase_login_sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v2H-fS-5jd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sek-WG-fBt">
+                                <rect key="frame" x="176.5" y="614" width="61" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutActionWithSender:" destination="XLv-GR-EHC" eventType="touchUpInside" id="svN-no-4nY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are logged in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwB-w1-j1q">
+                                <rect key="frame" x="16" y="60" width="382" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ishiahra" translatesAutoresizingMaskIntoConstraints="NO" id="NDs-64-T8c">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="PER-mS-WcU"/>
+                                    <constraint firstAttribute="height" constant="300" id="jx3-42-FIV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.09298773854970932" green="0.31344982981681824" blue="0.65546983480453491" alpha="0.9993896484" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sek-WG-fBt" firstAttribute="centerX" secondItem="v2H-fS-5jd" secondAttribute="centerX" id="1Zg-fi-t9E"/>
+                            <constraint firstItem="bCq-ul-yLg" firstAttribute="trailing" secondItem="PwB-w1-j1q" secondAttribute="trailing" constant="16" id="Q4M-CH-PDs"/>
+                            <constraint firstItem="PwB-w1-j1q" firstAttribute="top" secondItem="bCq-ul-yLg" secondAttribute="top" constant="16" id="SPS-yy-eeS"/>
+                            <constraint firstItem="NDs-64-T8c" firstAttribute="centerY" secondItem="v2H-fS-5jd" secondAttribute="centerY" id="Yor-zr-Jar"/>
+                            <constraint firstItem="sek-WG-fBt" firstAttribute="top" secondItem="NDs-64-T8c" secondAttribute="bottom" constant="16" id="hN7-iF-OE3"/>
+                            <constraint firstItem="PwB-w1-j1q" firstAttribute="leading" secondItem="bCq-ul-yLg" secondAttribute="leading" constant="16" id="hj1-Zm-Xhs"/>
+                            <constraint firstItem="NDs-64-T8c" firstAttribute="centerX" secondItem="v2H-fS-5jd" secondAttribute="centerX" id="lM2-0Z-W6X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bCq-ul-yLg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jd9-UM-48L" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.637681159420293" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ishiahra" width="1080" height="1080"/>
+    </resources>
+</document>
