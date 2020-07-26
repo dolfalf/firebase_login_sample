@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -32,21 +33,33 @@ class SignUpViewController: UIViewController {
     
     //Sign Up Action for email
     @IBAction func createAccountAction(_ sender: AnyObject) {
-        if emailTextField.text == "" {
+        guard let email = emailTextField.text else {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
             present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: passwordTextField.text ?? "") { authResult, error in
+          
+            if (error != nil) {
+                //6桁以上のパスワードが必要
+                return
+            }
             
-        } else {
-            
-            let vc = storyboard!.instantiateViewController(withIdentifier: "LoginVC")
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "LoginVC")
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
             
         }
     }
 
+    @IBAction func showLogin(sender: UIButton) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "LoginVC")
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
 }

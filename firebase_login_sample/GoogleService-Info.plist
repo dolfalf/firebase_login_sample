@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>885042389336-ken2no4lrckuhofe1kr9ed1tonavo4mr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.885042389336-ken2no4lrckuhofe1kr9ed1tonavo4mr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDzJ4YJRdvyZNRFGC9eEbHAloZs7I6D6d0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>885042389336</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>jp.co.archive-asia.firebase-login-sample</string>
+	<key>PROJECT_ID</key>
+	<string>fir-login-sample-6478d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-login-sample-6478d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:885042389336:ios:b6d49fc47ffb6b76b8452d</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-login-sample-6478d.firebaseio.com</string>
+</dict>
+</plist>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -46,10 +47,30 @@ class LoginViewController: UIViewController {
         
         } else {
             
-            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC")
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+            guard let email = emailTextField.text else  {
+                return
+            }
+            guard let password = passwordTextField.text else {
+                return
+            }
+            
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                
+                if error != nil {
+                    print("error : \(error.debugDescription)")
+                    return
+                }
+                
+              guard let strongSelf = self else { return }
+              
+                let storyboard = UIStoryboard(name: "Home", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC")
+                vc.modalPresentationStyle = .fullScreen
+                strongSelf.present(vc, animated: true, completion: nil)
+                
+            }
+            
+            
             
         }
     }
