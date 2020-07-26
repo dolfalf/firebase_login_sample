@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class HomeViewController: UIViewController {
 
@@ -29,5 +30,47 @@ class HomeViewController: UIViewController {
             //exception
         }
     }
+    
+    //https://firebase.google.com/docs/firestore/quickstart#set_up_your_development_environment
+    
+    @IBAction func addSampleData(sender: UIButton) {
+        
+        // TODO: DB関連悪説はRepository化する必要がある
+        
+        let db = Firestore.firestore()
+        
+        let random = Int(arc4random()) % 1000
+        
+        var ref: DocumentReference? = nil
+        ref = db.collection("users").addDocument(data: [
+            "first": "さとみ\(random)",
+            "last": "石原",
+            "gender": "Femele",
+            "num": random
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    
+    @IBAction func readSampleData(sender: UIButton) {
+        
+        let db = Firestore.firestore()
+        
+        db.collection("users").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+    }
+    
+    
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XLv-GR-EHC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XLv-GR-EHC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,13 +16,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sek-WG-fBt">
-                                <rect key="frame" x="176.5" y="614" width="61" height="33"/>
+                                <rect key="frame" x="141" y="614" width="132" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="logOutActionWithSender:" destination="XLv-GR-EHC" eventType="touchUpInside" id="svN-no-4nY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waz-03-wmb">
+                                <rect key="frame" x="141" y="696" width="132" height="33"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="read sample data">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="readSampleDataWithSender:" destination="XLv-GR-EHC" eventType="touchUpInside" id="Np7-CM-Kvg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are logged in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwB-w1-j1q">
@@ -38,15 +49,32 @@
                                     <constraint firstAttribute="height" constant="300" id="jx3-42-FIV"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3p-A6-G4F">
+                                <rect key="frame" x="141" y="655" width="132" height="33"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="add sample data">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSampleDataWithSender:" destination="XLv-GR-EHC" eventType="touchUpInside" id="dhQ-ZC-a8W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.09298773854970932" green="0.31344982981681824" blue="0.65546983480453491" alpha="0.9993896484" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sek-WG-fBt" firstAttribute="centerX" secondItem="v2H-fS-5jd" secondAttribute="centerX" id="1Zg-fi-t9E"/>
+                            <constraint firstItem="x3p-A6-G4F" firstAttribute="leading" secondItem="sek-WG-fBt" secondAttribute="leading" id="5oG-TB-mG8"/>
+                            <constraint firstItem="x3p-A6-G4F" firstAttribute="top" secondItem="sek-WG-fBt" secondAttribute="bottom" constant="8" id="Gzd-vW-hPK"/>
                             <constraint firstItem="bCq-ul-yLg" firstAttribute="trailing" secondItem="PwB-w1-j1q" secondAttribute="trailing" constant="16" id="Q4M-CH-PDs"/>
                             <constraint firstItem="PwB-w1-j1q" firstAttribute="top" secondItem="bCq-ul-yLg" secondAttribute="top" constant="16" id="SPS-yy-eeS"/>
+                            <constraint firstItem="waz-03-wmb" firstAttribute="leading" secondItem="sek-WG-fBt" secondAttribute="leading" id="Uq3-Tt-CSo"/>
+                            <constraint firstItem="waz-03-wmb" firstAttribute="top" secondItem="x3p-A6-G4F" secondAttribute="bottom" constant="8" id="Xsp-Iv-NHh"/>
                             <constraint firstItem="NDs-64-T8c" firstAttribute="centerY" secondItem="v2H-fS-5jd" secondAttribute="centerY" id="Yor-zr-Jar"/>
+                            <constraint firstItem="x3p-A6-G4F" firstAttribute="trailing" secondItem="sek-WG-fBt" secondAttribute="trailing" id="ZNB-4Y-Sb4"/>
                             <constraint firstItem="sek-WG-fBt" firstAttribute="top" secondItem="NDs-64-T8c" secondAttribute="bottom" constant="16" id="hN7-iF-OE3"/>
                             <constraint firstItem="PwB-w1-j1q" firstAttribute="leading" secondItem="bCq-ul-yLg" secondAttribute="leading" constant="16" id="hj1-Zm-Xhs"/>
+                            <constraint firstItem="waz-03-wmb" firstAttribute="trailing" secondItem="sek-WG-fBt" secondAttribute="trailing" id="hz3-mQ-tBz"/>
                             <constraint firstItem="NDs-64-T8c" firstAttribute="centerX" secondItem="v2H-fS-5jd" secondAttribute="centerX" id="lM2-0Z-W6X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bCq-ul-yLg"/>
