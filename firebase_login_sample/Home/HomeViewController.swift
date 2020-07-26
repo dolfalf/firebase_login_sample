@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
@@ -17,10 +18,16 @@ class HomeViewController: UIViewController {
 
     @IBAction func logOutAction(sender: AnyObject) {
         
-        let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "SignUpVC")
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
-        
+        do {
+            try Auth.auth().signOut()
+            
+            let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+            
+        } catch  {
+            //exception
+        }
     }
 }
 
